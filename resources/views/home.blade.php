@@ -1,23 +1,31 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
+{{-- Set the title displayed in the browser tab --}}
+@section('title', 'AdminLTE Dashboard')
+
+{{-- Set the title displayed in the page header --}}
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
+{{-- This is the main content area for your page --}}
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Welcome</h3>
+        </div>
+        <div class="card-body">
+            You are logged in and viewing the AdminLTE styled dashboard!
         </div>
     </div>
-</div>
-@endsection
+@stop
+
+{{-- Optional: Include custom CSS assets --}}
+@section('css')
+    {{-- <link rel="stylesheet" href="/css/custom.css"> --}}
+@stop
+
+{{-- Optional: Include custom JS assets --}}
+@section('js')
+    <script> console.log('Welcome!'); </script>
+@stop
