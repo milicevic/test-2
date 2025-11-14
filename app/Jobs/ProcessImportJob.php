@@ -92,8 +92,7 @@ class ProcessImportJob implements ShouldQueue
                 if ($validator->fails()) {
                     foreach ($validator->errors()->toArray() as $col => $messages) {
                         ValidationLogs::create([
-
-                            'table_name' => $modelClass::getTable(),
+                            'table_name' => $modelClass . '-' . $fileKey,
                             'row_number' => $rowIndex + 1,
                             'column_name' => $col,
                             'new_value' => $data[$col],

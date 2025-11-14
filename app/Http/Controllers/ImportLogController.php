@@ -13,10 +13,10 @@ class ImportLogController extends Controller
      */
     public function index(Request $request)
     {
-        $importLogs = ImportLog::with('user', 'validationLogs')->paginate(10);
+        $importLogs = ImportLog::with('user', 'validationLogs')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('import.logs.index', compact('importLogs'));
     }
 
-    
+
 }
