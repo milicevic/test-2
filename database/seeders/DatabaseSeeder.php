@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,9 +18,19 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
+        //test user and permissions
+        $user = User::factory()->create([
+            'name' => 'Test Ussser',
             'email' => 'test@example.com',
+            'password' => bcrypt('password')
         ]);
+        $permissions = collect([
+            ['name' => 'user-management', 'label' => 'User Management'],
+            ['name' => 'upload-data', 'label' => 'Upload Data'],
+        ])->map(function ($data) {
+            return Permission::factory()->create($data);
+        });
+
+        $user->permissions()->sync($permissions->pluck('id'));
     }
 }
