@@ -9,8 +9,6 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-
-        {{-- Flash messages --}}
         @if(session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -27,14 +25,13 @@
         @if(session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-@foreach ($errors->all() as $error)
-    <div class="alert alert-danger">{{ $error }}</div>
-@endforeach
-        {{-- The Form --}}
-        <form id="importForm" method="POST" action="{{ route('data.import.upload') }}" enctype="multipart/form-data">
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">{{ $error }}</div>
+        @endforeach
+
+        <form id="importForm" method="POST" action="{{ route('import.upload') }}" enctype="multipart/form-data">
             @csrf
 
-            {{-- Select Import Type --}}
             <div class="form-group">
                 <label for="importType">Select Import Type</label>
                 <select id="importType" name="import_type" class="form-control" required>

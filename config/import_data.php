@@ -19,11 +19,7 @@ return [
                         'label' => 'SKU',
                         'type' => 'string',
                         'validation' => [
-                            'required',
-                            'exists' => [
-                                'table' => 'products',
-                                'column' => 'sku',
-                            ],
+                            'required'
                         ],
                     ],
                     'item_description' => [
@@ -69,7 +65,7 @@ return [
                         ],
                     ],
                 ],
-                'update_or_create' => ['so_num', 'sku'],
+                'update_or_create' => ['so', 'sku'],
             ],
             'file2' => [
                 'label' => 'File 2',
@@ -132,7 +128,7 @@ return [
                         ],
                     ],
                 ],
-                'update_or_create' => ['so_num', 'sku'],
+                'update_or_create' => ['shipping_cost', 'total_price'],
             ],
         ],
     ],

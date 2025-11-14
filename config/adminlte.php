@@ -319,22 +319,27 @@ return [
             'text' => 'User Management',
             'icon' => 'fas fa-fw fa-users',
             'submenu' => [
-                  [
+                [
                     'text' => 'Users',
-                      'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-fw fa-upload',
                     'url' => '/users',
                 ],
-                  [
+                [
                     'text' => 'Permissions',
-                    'icon' => 'fas fa-fw fa-data',
+                    'icon' => 'fas fa-fw fa-upload',
                     'url' => 'permissions',
                 ],
             ]
         ],
         [
-            'text' => 'Data Import',
-            'url' => 'data-import',
+            'text' => 'Import Data',
+            'url' => 'imports',
             'icon' => 'fas fa-fw fa-upload',
+        ],
+        [
+            'text' => 'Imports',
+            'url' => 'imports/logs',
+            'icon' => 'fas fa-fw fa-database',
         ],
     ],
 
