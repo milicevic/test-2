@@ -61,10 +61,8 @@ class PermissionController extends Controller
     }
         public function getUsers(Permission $permission)
     {
-        // Fetch only users for this permission, with pagination
         $users = $permission->users()->paginate(10);
 
-        // Return a Blade partial that contains the small table/list
         return view('permissions.partials.user_list_modal', compact('users'));
     }
     public function assignUsers(Permission $permission)

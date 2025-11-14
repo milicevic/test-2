@@ -317,6 +317,7 @@ return [
         ],
         [
             'text' => 'User Management',
+            'can' => 'user-management',
             'icon' => 'fas fa-fw fa-users',
             'submenu' => [
                 [
