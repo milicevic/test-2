@@ -8,8 +8,7 @@ class ValidationLogs extends Model
 {
     protected $table = 'validation_logs';
       protected $fillable = [
-        'import_type',
-        'file_name',
+        'import_log_id',
         'row_number',
         'table_name',
         'column_name',

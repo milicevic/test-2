@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('validation_logs', function (Blueprint $table) {
             $table->id();
-            $table->string('import_type');
-            $table->string('file_name')->nullable();
             $table->unsignedBigInteger('row_number')->nullable();
             $table->string('table_name');
             $table->string('column_name');

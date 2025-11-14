@@ -1,4 +1,4 @@
-//setup project 
+//setup project
 
 // copy env for test
 cp .env.example .env
@@ -9,3 +9,4 @@ composer install
 sail up -d
 // run migrations and seeder...
 
+dummy file for test is dummy_import.csv in public folder and it's match headers with (orders-file2)
